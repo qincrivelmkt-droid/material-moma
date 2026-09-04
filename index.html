@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Dublê Digital — Qincrível Marketing</title>
+<style>
+  @font-face { font-family: 'Serif'; src: local('Georgia'); }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #0a0a0a;
+    color: #f2f2f2;
+    font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 70px 32px 100px; }
+
+  header { margin-bottom: 56px; }
+  .kicker {
+    font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+    color: #999; font-weight: 600; margin-bottom: 18px;
+  }
+  h1 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 40px; font-weight: 700; color: #fff;
+    letter-spacing: -0.5px; margin-bottom: 16px;
+  }
+  .subtitle { font-size: 16px; color: #b8b8b8; max-width: 620px; }
+
+  .rule { height: 1px; background: #262626; margin: 48px 0; }
+
+  .step-kicker {
+    font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: #e8c98a; font-weight: 700; margin-bottom: 10px;
+  }
+  h2 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 24px; color: #fff; margin-bottom: 10px;
+  }
+  .section-note { font-size: 14.5px; color: #999; max-width: 640px; margin-bottom: 32px; }
+
+  .benefits-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 28px;
+  }
+  @media (max-width: 700px) { .benefits-grid { grid-template-columns: 1fr; } }
+  .benefit-card {
+    background: #131313; border: 1px solid #232323; border-radius: 10px;
+    padding: 22px 22px 24px;
+  }
+  .benefit-num {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 26px; color: #e8c98a; margin-bottom: 10px;
+  }
+  .benefit-title { color: #fff; font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+  .benefit-desc { color: #a3a3a3; font-size: 13.5px; }
+
+  .source-block {
+    display: flex; gap: 28px; align-items: flex-start;
+    background: #131313; border: 1px solid #232323; border-radius: 10px;
+    padding: 24px; margin-bottom: 8px; flex-wrap: wrap;
+  }
+  .source-block video { width: 220px; border-radius: 6px; display: block; background:#000; }
+  .source-text { flex: 1; min-width: 240px; }
+  .tag {
+    display: inline-block; font-size: 11px; letter-spacing: 1px; text-transform: uppercase;
+    color: #0a0a0a; background: #e8c98a; font-weight: 700;
+    padding: 4px 10px; border-radius: 4px; margin-bottom: 12px;
+  }
+  .source-text p { color: #cfcfcf; font-size: 14.5px; }
+  .source-text .label { color: #fff; font-weight: 600; font-size: 16px; margin-bottom: 8px; }
+
+  .grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 32px;
+  }
+  @media (max-width: 760px) { .grid { grid-template-columns: 1fr; } }
+  .card.wide { margin-top: 22px; }
+
+  .card {
+    background: #131313; border: 1px solid #232323; border-radius: 10px;
+    overflow: hidden;
+  }
+  .card video { width: 100%; display: block; background: #000; }
+  .card.wide video { aspect-ratio: 16/9; }
+  .card-body { padding: 18px 18px 20px; }
+  .card-tag {
+    font-size: 10.5px; letter-spacing: 1px; text-transform: uppercase;
+    color: #8fa; color: #9fd4ff; font-weight: 700; margin-bottom: 8px;
+  }
+  .card-title { color: #fff; font-size: 15.5px; font-weight: 600; margin-bottom: 6px; }
+  .card-desc { color: #a3a3a3; font-size: 13.5px; }
+
+  .wide-row { grid-column: 1 / -1; }
+
+  .placeholder {
+    border: 1px dashed #3a3a3a; border-radius: 10px; padding: 40px 28px;
+    text-align: center; color: #8a8a8a; margin-top: 8px;
+  }
+  .placeholder .ph-title { color: #d8d8d8; font-size: 16px; font-weight: 600; margin-bottom: 8px; }
+  .placeholder .ph-desc { font-size: 13.5px; max-width: 460px; margin: 0 auto; }
+
+  .note-box {
+    background: #131313; border-left: 3px solid #e8c98a; border-radius: 4px;
+    padding: 20px 24px; margin-top: 12px;
+  }
+  .note-box .note-title { color: #fff; font-weight: 600; font-size: 14.5px; margin-bottom: 6px; }
+  .note-box p { color: #b8b8b8; font-size: 13.5px; }
+
+  .exec-summary {
+    background: #131313; border: 1px solid #2c2717; border-radius: 10px;
+    padding: 20px 24px; margin-top: 8px;
+  }
+  .exec-summary .es-label {
+    font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: #e8c98a; font-weight: 700; margin-bottom: 8px;
+  }
+  .exec-summary p { color: #d8d8d8; font-size: 14.5px; }
+
+  .faq-item { margin-bottom: 22px; }
+  .faq-item:last-child { margin-bottom: 0; }
+  .faq-q { color: #fff; font-weight: 600; font-size: 14.5px; margin-bottom: 6px; }
+  .faq-a { color: #a3a3a3; font-size: 13.5px; max-width: 640px; }
+
+  .stats-row {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin: 28px 0 32px;
+  }
+  @media (max-width: 760px) { .stats-row { grid-template-columns: 1fr 1fr; } }
+  .stat-card {
+    background: #131313; border: 1px solid #232323; border-radius: 10px;
+    padding: 22px 18px; text-align: center;
+  }
+  .stat-num {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 30px; color: #e8c98a; font-weight: 700; margin-bottom: 8px;
+  }
+  .stat-label { color: #a3a3a3; font-size: 12.5px; }
+
+  .proof-imgs {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 8px;
+  }
+  @media (max-width: 700px) { .proof-imgs { grid-template-columns: 1fr; } }
+  .proof-imgs figure {
+    background: #131313; border: 1px solid #232323; border-radius: 10px;
+    overflow: hidden;
+  }
+  .proof-imgs img { width: 100%; display: block; }
+  .proof-imgs figcaption {
+    padding: 12px 16px; font-size: 12.5px; color: #8a8a8a;
+  }
+
+  .pillars-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 28px;
+  }
+  @media (max-width: 700px) { .pillars-grid { grid-template-columns: 1fr; } }
+  .pillar-card {
+    background: #131313; border: 1px solid #232323; border-radius: 10px;
+    padding: 20px 22px;
+  }
+  .pillar-num {
+    font-size: 11px; letter-spacing: 1px; color: #e8c98a; font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .pillar-title { color: #fff; font-size: 15px; font-weight: 600; margin-bottom: 8px; }
+  .pillar-desc { color: #a3a3a3; font-size: 13px; }
+
+  .configurator {
+    background: #131313; border: 1px solid #232323; border-radius: 12px;
+    padding: 30px 30px 34px; margin-top: 30px;
+  }
+  .cfg-row { margin-bottom: 26px; }
+  .cfg-row:last-of-type { margin-bottom: 0; }
+  .cfg-label {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 10px;
+  }
+  .cfg-label span:first-child { color: #d8d8d8; font-size: 14px; font-weight: 600; }
+  .cfg-value { color: #e8c98a; font-size: 15px; font-weight: 700; }
+  .cfg-sub { color: #7a7a7a; font-size: 12px; margin-top: 6px; }
+  input[type="range"] {
+    width: 100%; accent-color: #e8c98a; height: 4px; cursor: pointer;
+  }
+  .cfg-toggle-row {
+    display: flex; align-items: center; gap: 10px; margin-bottom: 26px;
+  }
+  .cfg-toggle-row label { color: #d8d8d8; font-size: 14px; font-weight: 600; }
+  .cfg-toggle-row input[type="checkbox"] { width: 17px; height: 17px; accent-color: #e8c98a; }
+  .cfg-toggle-note { color: #7a7a7a; font-size: 12px; margin-left: auto; }
+
+  .term-btns { display: flex; gap: 10px; }
+  .term-btn {
+    flex: 1; text-align: center; padding: 10px 8px; border-radius: 7px;
+    border: 1px solid #2c2c2c; background: #0f0f0f; color: #b8b8b8;
+    font-size: 12.5px; cursor: pointer; user-select: none;
+  }
+  .term-btn .term-main { font-weight: 700; color: #e2e2e2; font-size: 13.5px; }
+  .term-btn .term-disc { font-size: 11px; color: #6f9f77; margin-top: 2px; }
+  .term-btn.active { border-color: #e8c98a; background: #1c1a12; }
+  .term-btn.active .term-main { color: #e8c98a; }
+
+  .summary-box {
+    margin-top: 28px; padding-top: 22px; border-top: 1px solid #262626;
+  }
+  .summary-title {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #fff; font-size: 16px; margin-bottom: 16px;
+  }
+  .summary-line {
+    display: flex; justify-content: space-between; font-size: 13.5px;
+    color: #b8b8b8; padding: 7px 0; border-bottom: 1px solid #1c1c1c;
+  }
+  .summary-line span:last-child { color: #e2e2e2; font-weight: 600; }
+  .summary-total {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-top: 16px; padding-top: 16px; border-top: 1px solid #2c2c2c;
+  }
+  .summary-total span:first-child { color: #fff; font-size: 15px; font-weight: 700; }
+  .summary-total span:last-child {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #e8c98a; font-size: 28px; font-weight: 700;
+  }
+
+  footer { margin-top: 70px; padding-top: 26px; border-top: 1px solid #262626; }
+  footer .brand { color: #fff; font-weight: 600; font-size: 13.5px; }
+  footer .contact { color: #7a7a7a; font-size: 12.5px; margin-top: 4px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Qincrível Marketing · Dublê Digital</div>
+    <h1>Presença institucional constante, sem tirar tempo de ninguém</h1>
+    <p class="subtitle">O Dublê Digital tira da MoMA o maior custo de manter presença em vídeo:
+    o tempo de gravar, pensar roteiro e manter constância. Abaixo, a lógica por trás disso e a
+    prova de que a tecnologia já funciona de verdade.</p>
+
+    <div class="exec-summary">
+      <div class="es-label">Resumo</div>
+      <p>A Qincrível pode gerar vídeos institucionais com um avatar de IA treinado no rosto e na
+      voz de um sócio da MoMA, sem exigir gravação constante. A tecnologia já está validada (veja
+      a demonstração abaixo) e a proposta é começar com um piloto sem compromisso.</p>
+    </div>
+  </header>
+
+  <div class="step-kicker">01 · O que muda pra vocês</div>
+  <h2>Como funciona, em 4 passos</h2>
+  <p class="section-note">Hoje, manter presença em vídeo exige tempo de agenda, roteiro pensado
+  e constância, três coisas difíceis de sustentar no dia a dia de quem administra R$ 2 bilhões.
+  O Dublê Digital resolve isso com um processo simples, que não depende da rotina de nenhum sócio.</p>
+
+  <div class="benefits-grid">
+    <div class="benefit-card">
+      <div class="benefit-num">01</div>
+      <div class="benefit-title">Grava uma única vez</div>
+      <div class="benefit-desc">A sessão de referência acontece uma vez só. A partir dela,
+      qualquer vídeo novo é gerado sem precisar de nova gravação.</div>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-num">02</div>
+      <div class="benefit-title">Equipe estratégica roteiriza</div>
+      <div class="benefit-desc">Nossa equipe estuda o posicionamento da MoMA e escreve o
+      roteiro de cada vídeo, pronto pra aprovação de vocês.</div>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-num">03</div>
+      <div class="benefit-title">Edição profissional</div>
+      <div class="benefit-desc">Cada vídeo passa por edição completa, com identidade visual,
+      legendas e acabamento no padrão que a MoMA exige.</div>
+    </div>
+    <div class="benefit-card">
+      <div class="benefit-num">04</div>
+      <div class="benefit-title">Vídeos entregues no prazo</div>
+      <div class="benefit-desc">Entrega consistente, sempre na data combinada, sem depender
+      da agenda de nenhum sócio.</div>
+    </div>
+  </div>
+
+  <div class="rule"></div>
+
+  <div class="step-kicker">02 · Como funciona, na prática</div>
+  <h2>A fonte</h2>
+  <p class="section-note">Este é o único vídeo real da lista. Foi gravado uma única vez pelo Gustavo,
+  colaborador da Carflip Express, e usado para treinar o avatar dele. Todos os vídeos da seção
+  seguinte foram gerados a partir deste material, sem nenhuma nova filmagem.</p>
+
+  <div class="source-block">
+    <video controls preload="metadata" poster="original.jpg">
+      <source src="video original.mp4" type="video/mp4">
+    </video>
+    <div class="source-text">
+      <span class="tag">Vídeo real · referência</span>
+      <div class="label">video original.mp4</div>
+      <p>Gravação simples, feita em ambiente comum, sem estúdio ou equipamento especial.
+      É a partir dela que o avatar de IA aprende o rosto, as expressões e a voz da pessoa.</p>
+    </div>
+  </div>
+
+  <div class="rule"></div>
+
+  <h2>O que conseguimos gerar a partir dela</h2>
+  <p class="section-note">Três formatos diferentes, todos com o mesmo avatar, mostrando a
+  versatilidade do processo: edição com identidade visual, animação a partir de uma foto parada,
+  e um formato mais cinematográfico, estilo podcast.</p>
+
+  <div class="grid">
+    <div class="card">
+      <video controls preload="metadata" poster="mesa.jpg">
+        <source src="mesa-edicaoboa.mp4" type="video/mp4">
+      </video>
+      <div class="card-body">
+        <div class="card-tag">Gerado por IA</div>
+        <div class="card-title">Roteiro e edição completa</div>
+        <div class="card-desc">Avatar gerado com roteiro próprio, legendas e identidade visual
+        do cliente aplicada na edição.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <video controls preload="metadata" poster="foto.jpg">
+        <source src="video-feito-a-partir-da-foto.mp4" type="video/mp4">
+      </video>
+      <div class="card-body">
+        <div class="card-tag">Gerado por IA</div>
+        <div class="card-title">Animado a partir de uma foto</div>
+        <div class="card-desc">Nenhuma filmagem nova, apenas uma foto estática transformada
+        em vídeo falado pelo avatar.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="card wide">
+    <video controls preload="metadata" poster="podcast.jpg">
+      <source src="video-podcast.mp4" type="video/mp4">
+    </video>
+    <div class="card-body">
+      <div class="card-tag">Gerado por IA</div>
+      <div class="card-title">Formato podcast</div>
+      <div class="card-desc">Diálogo natural, com iluminação e enquadramento
+      cinematográfico, estilo entrevista. Vídeo horizontal, por isso aparece em destaque
+      abaixo dos outros dois.</div>
+    </div>
+  </div>
+
+  <div class="rule"></div>
+
+  <div class="step-kicker">03 · Resultado real de gestão</div>
+  <h2>Isso também é um case: crescimento do zero</h2>
+  <p class="section-note">Antes de qualquer avatar, a Qincrível já entrega resultado puro de
+  estratégia e gestão de conteúdo. O perfil da Inframe, marca de guestbook de fotos instantâneas
+  para casamentos, foi construído do zero, sem impulsionamento pago, e hoje mostra:</p>
+
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-num">3.396</div>
+      <div class="stat-label">seguidores construídos do zero em 4 meses</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">517 mil</div>
+      <div class="stat-label">visualizações em 90 dias, 100% orgânico</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">200+</div>
+      <div class="stat-label">cópias de e-book vendidas pelo próprio conteúdo</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">154 mil</div>
+      <div class="stat-label">visualizações no vídeo de maior alcance</div>
+    </div>
+  </div>
+
+  <div class="proof-imgs">
+    <figure>
+      <img src="perfil inframe.jpeg" alt="Perfil Instagram Inframe">
+      <figcaption>Print direto do perfil @inframe.oficial, sem edição.</figcaption>
+    </figure>
+    <figure>
+      <img src="insights inframe.jpeg" alt="Insights de visualizações Inframe">
+      <figcaption>Painel de insights do Instagram, últimos 90 dias.</figcaption>
+    </figure>
+  </div>
+
+  <div class="rule"></div>
+
+  <div class="step-kicker">04 · Investimento</div>
+  <h2>O que sustenta cada vídeo</h2>
+  <p class="section-note">Cinco frentes sustentam qualquer vídeo entregue: clonagem de vídeo,
+  clonagem de áudio, pesquisa, roteiro e edição. Nenhuma funciona isolada, o avatar sem pesquisa
+  vira genérico, o roteiro sem teste vira achismo, e a edição sem gancho não segura ninguém nos
+  primeiros segundos. A postagem no Instagram é um serviço à parte, opcional.</p>
+
+  <div class="pillars-grid">
+    <div class="pillar-card">
+      <div class="pillar-num">PILAR 01</div>
+      <div class="pillar-title">Clonagem de vídeo</div>
+      <div class="pillar-desc">Clone treinado nos gestos e expressões reais da pessoa, pra
+      o público reconhecer quem está falando, não um boneco genérico.</div>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-num">PILAR 02</div>
+      <div class="pillar-title">Clonagem de áudio</div>
+      <div class="pillar-desc">A voz clonada precisa passar no teste do ouvido: mesmo timbre,
+      mesma cadência, mesmas pausas de quem está sendo clonado.</div>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-num">PILAR 03</div>
+      <div class="pillar-title">Pesquisa</div>
+      <div class="pillar-desc">Entendemos o negócio do cliente antes do primeiro roteiro. Sem
+      isso, o conteúdo vira genérico e some no feed em duas semanas.</div>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-num">PILAR 04</div>
+      <div class="pillar-title">Roteiro</div>
+      <div class="pillar-desc">Nasce de dado, não de achismo. Monitoramos o que já funciona no
+      nicho e testamos variações reais até achar o que retém mais.</div>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-num">PILAR 05</div>
+      <div class="pillar-title">Edição</div>
+      <div class="pillar-desc">Decide se alguém para de rolar o feed ou passa direto. Os
+      primeiros segundos recebem tanto cuidado quanto o resto do vídeo.</div>
+    </div>
+    <div class="pillar-card">
+      <div class="pillar-num">PILAR 06 · OPCIONAL</div>
+      <div class="pillar-title">Postagem no Instagram</div>
+      <div class="pillar-desc">Não é gestão de conta, é a postagem em si, pra quem quer o
+      vídeo pronto sem depender de ninguém pra publicar.</div>
+    </div>
+  </div>
+
+  <div class="configurator">
+    <div class="summary-title" style="margin-bottom:22px;">Monte o orçamento do zero</div>
+
+    <div class="cfg-row">
+      <div class="cfg-label">
+        <span>Vídeos por semana</span>
+        <span class="cfg-value" id="v-semana-out">4</span>
+      </div>
+      <input type="range" id="v-semana" min="2" max="7" value="4">
+      <div class="cfg-sub" id="v-total-sub">16 vídeos/mês (4 semanas)</div>
+    </div>
+
+    <div class="cfg-row">
+      <div class="cfg-label">
+        <span>Vídeos de até 5 minutos</span>
+        <span class="cfg-value"><span id="v-5min-out">8</span> de <span id="v-5min-max">16</span></span>
+      </div>
+      <input type="range" id="v-5min" min="0" max="16" value="8">
+      <div class="cfg-sub">Os outros <span id="v-3min-out">8</span> vídeos serão de até 3 min.</div>
+    </div>
+
+    <div class="cfg-row">
+      <div class="cfg-label">
+        <span>Vídeos cinematográficos por mês</span>
+        <span class="cfg-value" id="v-cinema-out">0</span>
+      </div>
+      <input type="range" id="v-cinema" min="0" max="4" value="0">
+      <div class="cfg-sub">Máximo de 4 por mês. Substituem vídeos do total mensal, não somam à cota semanal.</div>
+    </div>
+
+    <div class="cfg-toggle-row">
+      <input type="checkbox" id="v-post" checked>
+      <label for="v-post">Incluir postagem no Instagram</label>
+      <span class="cfg-toggle-note">R$ 40 por dia de postagem/semana</span>
+    </div>
+
+    <div class="cfg-row">
+      <div class="cfg-label"><span>Meses de contrato</span></div>
+      <div class="term-btns">
+        <div class="term-btn active" data-term="1" data-disc="0">
+          <div class="term-main">1 mês</div>
+        </div>
+        <div class="term-btn" data-term="3" data-disc="5">
+          <div class="term-main">3 meses</div><div class="term-disc">−5%</div>
+        </div>
+        <div class="term-btn" data-term="6" data-disc="10">
+          <div class="term-main">6 meses</div><div class="term-disc">−10%</div>
+        </div>
+        <div class="term-btn" data-term="12" data-disc="15">
+          <div class="term-main">12 meses</div><div class="term-disc">−15%</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="summary-box">
+      <div class="summary-title">Orçamento mensal</div>
+      <div class="summary-line">
+        <span>Vídeos até 3 min (<span id="s-3min-qtd">8</span> × R$ 200)</span>
+        <span id="s-3min-total">R$ 1.600,00</span>
+      </div>
+      <div class="summary-line">
+        <span>Vídeos até 5 min (<span id="s-5min-qtd">8</span> × R$ 300)</span>
+        <span id="s-5min-total">R$ 2.400,00</span>
+      </div>
+      <div class="summary-line">
+        <span>Vídeos cinematográficos (<span id="s-cinema-qtd">0</span> × R$ 500)</span>
+        <span id="s-cinema-total">R$ 0,00</span>
+      </div>
+      <div class="summary-line">
+        <span>Postagem no Instagram</span>
+        <span id="s-post-total">R$ 160,00</span>
+      </div>
+      <div class="summary-line">
+        <span>Desconto de fidelidade</span>
+        <span id="s-desc">Sem desconto</span>
+      </div>
+      <div class="summary-total">
+        <span>Total / mês</span>
+        <span id="s-final">R$ 4.160,00</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="rule"></div>
+
+  <div class="step-kicker">05 · Próximo passo</div>
+  <h2>Piloto exclusivo para a MoMA</h2>
+  <p class="section-note">Próximo passo proposto: gravar uma referência real com um dos sócios
+  e gerar um vídeo sob medida para a MoMA, no mesmo padrão de qualidade mostrado acima.</p>
+
+  <div class="placeholder">
+    <div class="ph-title">Avatar do Bernardo — em produção</div>
+    <div class="ph-desc">Esta seção será atualizada assim que a gravação de referência e o
+    primeiro vídeo piloto estiverem prontos.</div>
+  </div>
+
+  <div class="note-box">
+    <div class="note-title">Segurança e consentimento de imagem</div>
+    <p>Cada avatar só é criado com autorização formal da pessoa gravada, e cada vídeo gerado
+    passa por aprovação antes de ser publicado ou enviado. O avatar fala apenas o que está no
+    roteiro revisado, sem geração livre de conteúdo.</p>
+  </div>
+
+  <div class="rule"></div>
+
+  <h2>Perguntas antes de decidir</h2>
+  <p class="section-note">Algumas dúvidas comuns de quem está vendo essa tecnologia pela
+  primeira vez.</p>
+
+  <div class="faq-item">
+    <div class="faq-q">Isso não é golpe ou deepfake?</div>
+    <div class="faq-a">Não. Cada avatar só existe com autorização formal da pessoa gravada, e
+    cada vídeo passa por aprovação antes de qualquer publicação ou envio. É a mesma lógica de
+    uma dublagem profissional, não geração livre de conteúdo.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">Quanto tempo leva pra sair o primeiro vídeo?</div>
+    <div class="faq-a">A gravação de referência leva menos de 10 minutos. A partir dela, o
+    primeiro vídeo piloto fica pronto para aprovação em poucos dias.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-q">E se não gostarmos do resultado?</div>
+    <div class="faq-a">O piloto não tem compromisso. Se o resultado não fizer sentido pra MoMA,
+    a conversa termina ali, sem custo e sem contrato assinado.</div>
+  </div>
+
+  <footer>
+    <div class="brand">Qincrível Marketing</div>
+    <div class="contact">Lucas Rosa Dias · qincrivel.mkt@gmail.com</div>
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  var PRICE_3MIN = 200, PRICE_5MIN = 300, PRICE_CINEMA = 500, PRICE_POST_DIA = 40;
+
+  var semanaEl = document.getElementById('v-semana');
+  var min5El = document.getElementById('v-5min');
+  var cinemaEl = document.getElementById('v-cinema');
+  var postEl = document.getElementById('v-post');
+  var termBtns = document.querySelectorAll('.term-btn');
+  var activeTerm = { term: 1, disc: 0 };
+
+  function brl(n) {
+    return 'R$ ' + n.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+
+  function recalc() {
+    var vSemana = parseInt(semanaEl.value, 10);
+    var total = vSemana * 4;
+
+    var cinemaMax = Math.min(4, total);
+    if (parseInt(cinemaEl.value, 10) > cinemaMax) cinemaEl.value = cinemaMax;
+    cinemaEl.max = cinemaMax;
+    var vCinema = parseInt(cinemaEl.value, 10);
+
+    var restante = total - vCinema;
+    if (parseInt(min5El.value, 10) > restante) min5El.value = restante;
+    min5El.max = restante;
+    var v5min = parseInt(min5El.value, 10);
+    var v3min = restante - v5min;
+
+    document.getElementById('v-semana-out').textContent = vSemana;
+    document.getElementById('v-total-sub').textContent = total + ' vídeos/mês (4 semanas)';
+    document.getElementById('v-5min-out').textContent = v5min;
+    document.getElementById('v-5min-max').textContent = restante;
+    document.getElementById('v-3min-out').textContent = v3min;
+    document.getElementById('v-cinema-out').textContent = vCinema;
+
+    var custo3 = v3min * PRICE_3MIN;
+    var custo5 = v5min * PRICE_5MIN;
+    var custoCinema = vCinema * PRICE_CINEMA;
+    var custoPost = postEl.checked ? vSemana * PRICE_POST_DIA : 0;
+
+    var subtotal = custo3 + custo5 + custoCinema + custoPost;
+    var descPct = activeTerm.disc;
+    var final = subtotal * (1 - descPct / 100);
+
+    document.getElementById('s-3min-qtd').textContent = v3min;
+    document.getElementById('s-3min-total').textContent = brl(custo3);
+    document.getElementById('s-5min-qtd').textContent = v5min;
+    document.getElementById('s-5min-total').textContent = brl(custo5);
+    document.getElementById('s-cinema-qtd').textContent = vCinema;
+    document.getElementById('s-cinema-total').textContent = brl(custoCinema);
+    document.getElementById('s-post-total').textContent = postEl.checked ? brl(custoPost) : brl(0);
+    document.getElementById('s-desc').textContent = descPct > 0
+      ? ('−' + descPct + '% (' + activeTerm.term + ' meses)')
+      : 'Sem desconto';
+    document.getElementById('s-final').textContent = brl(final);
+  }
+
+  semanaEl.addEventListener('input', recalc);
+  min5El.addEventListener('input', recalc);
+  cinemaEl.addEventListener('input', recalc);
+  postEl.addEventListener('change', recalc);
+
+  termBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      termBtns.forEach(function (b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      activeTerm.term = parseInt(btn.getAttribute('data-term'), 10);
+      activeTerm.disc = parseInt(btn.getAttribute('data-disc'), 10);
+      recalc();
+    });
+  });
+
+  recalc();
+})();
+</script>
+</body>
+</html>
